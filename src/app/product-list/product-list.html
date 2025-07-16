@@ -6,20 +6,19 @@
             <th>Precio</th>
             <th>Tipo</th>
             <th>Stock</th>
+            <th>Comprar</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
+        <tr *ngFor="let product of products">
             <td>{{product.nombre}}</td>
-            <td>$500</td>
-            <td>Raro</td>
-            <td>3</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>$200</td>
-            <td>Comun</td>
-            <td>10</td>
-        </tr>
+            <td>{{product.precio}}</td>
+            <td>{{product.tipo}}</td>
+            <td><span class="badge rounded-pill text-bg-danger" *ngIf="product.stock==0">SIN STOCK</span></td>
+            <td>
+            <button type="button" class="btn btn-outline-primary" (click)="downCantidad(product)">-</button>
+            <input type="text" [(ngModel)]="product.cantidad" (keyup)="onCambiarCantidad($event, product)">
+            <button type="button" class="btn btn-outline-primary" (click)="upCantidad(product)">+</button>
+        </td>
     </tbody>
 </table>
