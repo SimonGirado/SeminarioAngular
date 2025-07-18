@@ -16,9 +16,7 @@
             <td>{{product.tipo}}</td>
             <td><span class="badge rounded-pill text-bg-danger" *ngIf="product.stock==0">SIN STOCK</span></td>
             <td>
-            <button type="button" class="btn btn-outline-primary" (click)="downCantidad(product)">-</button>
-            <input type="text" [(ngModel)]="product.cantidad" (keyup)="onCambiarCantidad($event, product)">
-            <button type="button" class="btn btn-outline-primary" (click)="upCantidad(product)">+</button>
-        </td>
+                <app-input-integer [(cantidad)]="product.cantidad" [max]="product.stock" *ngIf="product.stock"></app-input-integer>
+            </td>
     </tbody>
 </table>

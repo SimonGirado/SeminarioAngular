@@ -6,8 +6,10 @@ import { App } from './app';
 import { AppRoutingModule } from './app-routing-module';
 import { ProductList } from './product-list/product-list';
 import { ShopAbout } from './shop-about/shop-about';
-import { ShopProducts } from './shop-products/shop-products';
 import { ShopCart } from './shop-cart/shop-cart';
+import { ShopProducts } from './shop-products/shop-products';
+import { InputInteger } from './input-integer/input-integer';
+
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { ShopCart } from './shop-cart/shop-cart';
     ProductList,
     ShopAbout,
     ShopProducts,
-    ShopCart
+    ShopCart,
+    InputInteger,
+
   ],
   imports: [
     BrowserModule,
