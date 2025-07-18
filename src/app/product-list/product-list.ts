@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ProductCart } from '../product-cart';
 import { Product } from './Product';
 
 @Component({
@@ -40,6 +41,16 @@ export class ProductList {
   }
   ]
 
+  addToCart(product: Product): void{
+    
+
+    this.cart.addToCart(product)
+    product.stock -= product.cantidad;
+    product.cantidad = 0;
+  }
+  constructor(private cart: ProductCart){
+
+  }
 }
 
 

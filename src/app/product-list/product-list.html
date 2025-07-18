@@ -17,6 +17,7 @@
             <td><span class="badge rounded-pill text-bg-danger" *ngIf="product.stock==0">SIN STOCK</span></td>
             <td>
                 <app-input-integer [(cantidad)]="product.cantidad" [max]="product.stock" *ngIf="product.stock"></app-input-integer>
+                <button class="btn btn-outline-primary" (click)="addToCart(product)">Añadir</button>
             </td>
     </tbody>
 </table>
